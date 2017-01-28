@@ -1,0 +1,24 @@
+title: Videocalls status update
+headline: Videocalls update
+date: 26-01-2016
+
+{% extends "post.html" %}
+{% block postcontent %}
+
+{% filter markdown %}
+
+Have deployed a couple of webapps for Jabber chatting and calling.
+
+* [Jappix](https://decent.im/jappix)
+* [JSXC](https://decent.im/jsxc/example)
+
+Both are not perfect, but still it's something. I hope things will get better in future.
+
+Also [this simple test webpage](https://legastero.github.io/jingle-interop-demos/stanzaio/) is quite good for testing Jabber calls capability. Just be sure to enter full JID (with resource part) into participant JID input. The full JID of the connection made by this page shows up on the page itself. WebSocket URL is `wss://decent.im:5281/xmpp-websocket`
+
+For your information, I am working on implementing Jingle calls in Conversations, please join to [Bountysource campaign](https://www.bountysource.com/issues/18153806-support-audio-video-calls-encryption/backers).
+
+Also I am thinking about adding support of videocalls into `mcabber` using ffmpeg. Please drop me a line if you want this, or if you want to help.
+
+{% endfilter %}
+{% endblock postcontent %}

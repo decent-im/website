@@ -1,0 +1,28 @@
+title: "OMFG!"
+headline: Ququ
+date: 01-01-9999
+
+{% extends "post.html" %}
+{% block postcontent %}
+
+<a href='https://xmpp.net/result.php?domain=decent.im&amp;type=client'>
+  <img src='https://xmpp.net/badge.php?domain=decent.im' alt='xmpp.net score' /></a>
+
+{% filter markdown %}
+
+**OMFG - at last there's a decent public Jabber service - with chat sync "as in skype"!**
+
+Technically, it means ```Message Archive Management (XEP-0313)```, ```Message Carbons (XEP-0280)``` and message delivery to offline **enabled** for users! Almost all public Jabber servers I know disable it, so that your conversation history always gets fucked up, having messages lost and split across your multiple client instances.
+
+Why would anyone need these promoted fenced proprietary messengers, which are unclear about your security and privacy (or, perhaps, clear about lack of it). Get armed with any decent **standard Jabber client** featuring **standard encryption technologies**, and get privacy-traders and adversaries suck a good time!
+
+So go check [how to leverage these features](/usage/)!
+
+**Videocalls are also possible!** (although not perfectly implemented everywhere, [working on making it better](https://www.bountysource.com/issues/18153806-support-audio-video-calls-encryption/backers))
+
+**===> To request for an account, just [drop me an email](mailto:andrey_utkin@fastmail.com)! <===**
+
+P. S. Terribly sorry for indecent language, I'm just that much excited about decency of this new service.
+
+{% endfilter %}
+{% endblock postcontent %}

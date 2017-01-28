@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <title>{% block title %}decent.im{% endblock %}</title>
+
+        <link rel="stylesheet" href="{% static '/static/css/bootstrap.css' %}">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="{% static '/static/css/bootstrap-theme.css' %}">
+        <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
+        <link rel="alternate" type="application/rss+xml" title="decent.im" href="/rss.xml">
+        <script src="{% static '/static/js/vendor/modernizr-2.6.2.js' %}"></script>
+    </head>
+
+    <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand {% if_current_page '/index.html' 'active' '' %}" href="{% url "/index.html" %}">decent.im</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+{#            <!--<li class="{% if_current_page '/index.html' 'active' '' %}"><a href="{% url '/index.html' %}">Home</a></li>-->#}
+            <li class="{% if_current_page '/contact.html' 'active' '' %}"><a href="{% url '/contact.html' %}">Contact</a></li>
+            <li class="{% if_current_page '/register.html' 'active' '' %}"><a href="{% url '/register.html' %}">Register</a></li>
+            <li class="{% if_current_page '/usage.html' 'active' '' %}"><a href="{% url '/usage.html' %}">Usage</a></li>
+            <li class="{% if_current_page '/contribute.html' 'active' '' %}"><a href="{% url '/contribute.html' %}">Contribute</a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+
+    <script src="{% static '/static/js/vendor/jquery-1.10.1.js' %}"></script>
+    <script src="{% static '/static/js/vendor/bootstrap.js' %}"></script>
+    <script src="{% static '/static/js/main.js' %}"></script>
+  </body>
+
+  {% block scripts %}
+  {% endblock %}
+</html>

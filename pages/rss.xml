@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title>decent.im</title>
+    <link href="/"/>
+    <description>The latest news from decent.im</description>
+    {% for post in posts %}
+    {% if forloop.first %}
+    <updated>{{ post.date|date:"c" }}></updated>
+    {% endif %}
+    {% endfor %}
+
+  {% for post in posts %}
+  {% if forloop.counter < 20 %}
+  <entry>
+    <title type="html"><![CDATA[{{ post.title }}]]></title>
+    <link href="{{ siteURL }}/{{ post.path }}"/>
+    <updated>{{ post.date|date:"c" }}</updated>
+    <id>{{ siteURL }}/{{ post.path }}</id>
+    <content type="html"><![CDATA[{{ post.body }}]]></content>
+  </entry>
+  {% endif %}
+  {% endfor %}
+</feed>
