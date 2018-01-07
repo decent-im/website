@@ -1,0 +1,35 @@
+title: Maintenance report for December 2017
+headline: Maintenance report
+date: 08-01-2018
+
+{% extends "post.html" %}
+{% block postcontent %}
+
+{% filter markdown %}
+
+Happy new 2018 year!
+
+During last month, this happened:
+
+* spectrum build failure was resolved
+
+  To fix that, I submitted upstream a [pull request](https://github.com/SpectrumIM/spectrum2/pull/252)
+  with a trivial patch, which was accepted (not without a bit of bikeshedding with upstream maintainer).
+
+* biboumi, the awesome IRC gateway, was integrated to production service
+
+  biboumi is a great software, featuring a bunch of nice capabilities, for example, message archive access for IRC rooms
+  user is attending. This means no more missed bits in IRC conversations!
+
+  biboumi previously could use only SQLite database, which was considered by me a major downside. Finally, with a help
+  of our very humble donation, the upstream maintainer recently added PostgreSQL support! Then, I have added it to
+  production server (as well as staging server dev.decent.im). Existing `irc.decent.im` component, previously served
+  by Spectrum & libcommini based gateway, was replaced with biboumi, for convenience and clarity. (Previously I
+  considered putting it to horrific URI ``biboumi.irc.decent.im``).
+
+* one more user joined decent.im :)
+
+  Our server is not boasting a huge user base, but I value every person who puts trust into decent.im!
+
+{% endfilter %}
+{% endblock postcontent %}
