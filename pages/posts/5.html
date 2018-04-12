@@ -1,0 +1,40 @@
+title: Maintenance report for January-March 2018
+headline: Maintenance report
+date: 11-04-2018
+
+{% extends "post.html" %}
+{% block postcontent %}
+
+{% filter markdown %}
+
+During this time, not much happened:
+
+* staging server dev.decent.im shut down
+
+  It wasn't actively used by me for few months, but it costs the same as production host. I decided to stop this waste
+  of funds.
+
+  Of course now I need to be more cautious when applying changes to produciton, or at last I should not start testing
+  stuff on production server. I am thinking of making it more possible to replicate entire setup in a locla environment
+  not having all properties of real public server (e.g. public static IP). But this is yet to be resolved in future.
+
+* intermittently, unattended upgrade was broken because lua-expat upstream website was down:
+
+  lua-expat author has kindly brought up the site on my request. It was brought down manually to stop DoS attack which
+  was mounted against his website.
+
+<pre>
+->  http://code.matthewwild.co.uk/lua-expat/
+--> hg identify --id --rev default http://code.matthewwild.co.uk/lua-expat/ --config trusted.users=portage
+abort: HTTP Error 404: Not Found
+!!! Error updating dev-lua/luaexpat:0: [Exception] update command returned non-zero result
+...
+* Updating /usr/portage/distfiles/hg-src/luaexpat/lua-expat from http://code.matthewwild.co.uk/lua-expat/
+pulling from http://code.matthewwild.co.uk/lua-expat/
+abort: HTTP Error 404: Not Found
+</pre>
+
+* again, one more user joined decent.im :)
+
+{% endfilter %}
+{% endblock postcontent %}
