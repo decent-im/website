@@ -15,7 +15,7 @@ But I was asked by a user to limit the archives retention period for them.
 Happy to oblige - less risk for their privacy, less data to store on the server for me.
 But I wanted to give them the possibility to keep storing their data themselves indefinitely.
 
-The new tool is called `decent.im_user_takeout_all`.
+The new tool is called [`decent.im_user_takeout_all`](https://github.com/decent-im/decent.im/blob/master/files/sbin/decent.im_user_takeout_all).
 It takes username as a parameter, and produces a compressed archive named like `takeout.username.2023-10-13_09:16:02.tar.zst`.
 It takes the chat logs and user's settings from the Postgres database, and stores them in SQLite database file, just like they were structured before, so it would be easy to restore it to a different server.
 
