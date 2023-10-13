@@ -1,0 +1,51 @@
+title: Data takeout and account portability
+date: 13-10-2023
+
+{% extends "post.html" %}
+{% block postcontent %}
+
+{% filter markdown %}
+
+Besides boring maintenance, lately I've been working on "full user data takeout" tools.
+Including all chats logs, and shared pictures and other files which were stored on the server.
+It's a great possibility all around - you keep your data so you can take it to your own server or a different one, and the service disruptions would be a lesser concern.
+For me, though, the main motivation is to be more confident about targeted data cleanups.
+Currently the archives (messages and shared files) are stored indefinitely, because I am a sentimental person.
+But I was asked by a user to limit the archives retention period for them.
+Happy to oblige - less risk for their privacy, less data to store on the server for me.
+But I wanted to give them the possibility to keep storing their data themselves indefinitely.
+
+The new tool is called `decent.im_user_takeout_all`.
+It takes username as a parameter, and produces a compressed archive named like `takeout.username.2023-10-13_09:16:02.tar.zst`.
+It takes the chat logs and user's settings from the Postgres database, and stores them in SQLite database file, just like they were structured before, so it would be easy to restore it to a different server.
+
+It also saves the user's uploads stored on the server, preserving the server's directory layout and timestamps.
+
+## More tooling - XMPP Account Portability project
+
+Most of my tool was implemented within one intense day.
+It works well and I think it's a nice improvement, but I am at unease with the resulting data format.
+The data could be packaged in so much more broadly portable format!
+
+In 2021-2022, in [XMPP Account Portability project](https://docs.modernxmpp.org/projects/portability/), developers Magnus Henoch, Waqas Hussain, Matthew Wild, Daniel Brötzmann (cal0pteryx), Kim Alvefur (Zash) and others have developed [the specification](https://xmpp.org/extensions/xep-0227.html), [the server-side support](https://hg.prosody.im/trunk/file/tip/plugins/mod_storage_xep0227.lua), and [the tool](https://migrate.modernxmpp.org/) for users to take out their data from servers, and automatically migrate to another server.
+
+The said tool is web-based, and it is now [deployed on decent.im](https://decent.im/xmpp-account-exporter/).
+
+## Future development
+
+This tool doesn't export the chat history, although it can be made to do that.
+I think it's important to make it do that (I *am* a sentimental person), so I want to work on that.
+
+The uploads - pictures and such - are not in scope for the [portable import format spec](https://xmpp.org/extensions/xep-0227.html).
+It feels valuable to be able to take these files with you, but some gotchas must be mentioned.
+Once the files are uploaded to the XMPP server, the URLs are sent in messages in the conversations.
+Since your friends stay where they are (or migrate on their own), their message archives hold the URLs pointing to your old server, where you're migrating from.
+You can retain your copies, but if the old server stops serving these files, the links go broken.
+It would even take some special processing to update *your* message archive to update the links.
+And then, you "own" the files you've uploaded and shared, but then there are files which were shared with you by your buddies.
+No list of such files exists on any server - it's just your message archive having these URLs, most of them in a special-kind stanzas which should be possible to match.
+You should be able to copy these locally once you search across your message archive (you'd need to decrypt the encrypted ones for that, which would complicate the tooling needed).
+
+
+{% endfilter %}
+{% endblock postcontent %}
