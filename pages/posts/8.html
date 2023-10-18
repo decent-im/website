@@ -1,0 +1,41 @@
+title: Messengers performance
+date: 18-10-2023
+
+{% extends "post.html" %}
+{% block postcontent %}
+
+{% filter markdown %}
+
+I have been measuring and comparing messaging apps for Android.
+Now I have something to share.
+I hope you enjoy reading this and it proves to be a useful knowledge for you.
+
+This is a very limited study of resource usage by messaging apps on Android.
+It needs more apps, devices and picky readers and reviewers.
+
+## Conclusions
+
+Conversations (XMPP) seems best for battery life, traffic and RAM.
+
+Facebook Messenger and Element (Matrix) are the worst from the studied apps, draining up to 300x more power than Conversations when battery optimization is disabled.
+
+Element X (experimental Matrix app) is coming up with a more than 100x reduction in energy consumption (comparing to Element), drawing just 2x more power than Conversations.
+
+A few more proprietary messengers have been measured and they fall in between the space between the above mentioned extremes. Little can be said about them besides that most of them continuously draw substantial amount of power and bandwidth even when not interacted with.
+
+## Cool Pictures! I mean, serious data.
+
+**Explore this [public Grafana dashboard](https://decentim.grafana.net/public-dashboards/92602d3a4aa842ce97812d310077691d).**
+
+## Misc
+
+I run an XMPP server, but I made this research to find out the facts, not to prove any beliefs or prop up attractiveness of any chat network.
+
+You can:
+
+* [Add your data](https://github.com/decent-im/messengers-perf)
+* [Donate](https://nurture.decent.im/) (mention `messengers-perf` in the comment)
+* [Ask, thank or tell me something](mailto:messengers-perf@autkin.net)
+
+{% endfilter %}
+{% endblock postcontent %}
