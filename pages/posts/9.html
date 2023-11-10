@@ -1,0 +1,16 @@
+title: Anti-spam developments
+date: 10-11-2023
+
+{% extends "post.html" %}
+{% block postcontent %}
+
+{% filter markdown %}
+
+Prosody developer MattJ gave a talk this week on the topic of 
+[Spam, Abuse and Moderation](https://mov.im/node/pubsub.movim.eu/berlin-xmpp-meetup/mattj-talks-about-spam-abuse-and-moderation-7fJ5za)
+discussing many aspects of keeping the users, servers and entire XMPP network safe.
+
+Prompted by the talk, I [enabled the spam reporting modules](https://github.com/decent-im/decent.im/commit/8db83f8c9c609f4d5fb4a3312962efb634702d4b).
+
+{% endfilter %}
+{% endblock postcontent %}
