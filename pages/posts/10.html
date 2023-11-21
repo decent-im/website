@@ -1,0 +1,66 @@
+title: 8 years
+date: 10-11-2023
+
+{% extends "post.html" %}
+{% block postcontent %}
+
+{% filter markdown %}
+
+I started Decent.im 8 years ago.
+With glee and audacity.
+
+"Look honey, just like Skype, but on my server!"
+
+I found no public server which synced and archived mesasges properly and I boasted about my "feat", even at the Operators chatroom.
+
+![Screenshot of domain purchase receipt](/static/images/domain-purchase.png)
+
+![Screenshot of decent.im frontpage in early days](/static/images/early-days-frontpage.png)
+
+There was more joy down the road.
+
+I used it all this time with my spouse, and still do.
+[Conversations](https://conversations.im) app was the key enabler for that.
+
+I used gateways to IRC, Skype, Slack and Facebook to be widely connected but more conveniently.
+
+My makeshift CCTV system was connected to an XMPP account for "online status" and notificaitons of detected motion.
+
+I initially spun the server up on Ubuntu, but pretty soon I hit some annoying limitations so I switched to Gentoo.
+For quite a long time, the server was running the bleeding edge of a lot of the core software, with weekly unattended updates.
+Prosody [and stuff](https://decent.im/posts/5/) were pulled straight from the trunk of the version control system.
+The flavour of audacity is a form of compensation.
+
+This worked exceptionally well for such an arrangement, which shows that the developers are very careful and the software stack is very stable.
+I got into (2017) and out of (2022) the status of Gentoo Developer in the meantime, but Decent.im still runs on Gentoo Linux.
+
+A few users have joined over time.
+Those asking for two accounts, for themselves and their close relative, seem to be especially persistent in using it.
+[Give it a try the same way.](/register/)
+
+
+## Thanks
+
+This is a little thingy which was built and keeps living owing to the vast treasure of perfect gifts from a lot of people.
+
+Particular thanks:
+
+[Prosody](https://prosody.im) devs - MattJ, Zash and others, for support and for keeping this all evolving.
+
+Daniel Gultsch for [Conversations](https://conversations.im) which made XMPP cute and "just work" on Android.
+
+fiaxh and larma for [Dino](https://conversations.im) which made XMPP cute and "just work" on desktop.
+
+Louiz for [Biboumi](https://biboumi.louiz.org/) the IRC bridge, and for him adding support for PostgreSQL storage on my
+request and funded by me.
+
+[Eion Robb](https://eion.robbmob.com/blog/) for his [Skype bridges](https://github.com/EionRobb/skype4pidgin).
+
+[pep.](https://bouah.net/) for organizing the [XMPP Sprint](https://wiki.xmpp.org/web/Sprints/2018_August_Cambridge) where I met many XMPP developers (including some listed above) in person.
+
+Jonas Schäfer for keeping my back with his [free monitoring system](https://observe.jabber.network/).
+
+[Conrad Kostecki](https://packages.gentoo.org/maintainer/conikost@gentoo.org) for maintaining XMPP server packages in Gentoo Linux.
+
+{% endfilter %}
+{% endblock postcontent %}
