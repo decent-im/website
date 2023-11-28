@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="jumbotron">
+  <div class="container">
+    {% filter markdown %}
+
+# Newsreader service
+
+FreshRSS is a free, open source, reliable and ergonomic service with web interface (which is usable on mobile) and API for mobile apps.
+
+As with the XMPP service, I use it daily and I like it very much.
+
+**[Take a look at my own selection of news sources to get a taste](https://news.decent.im).**
+
+(Note that with your own account, the newsreader will remember which articles you have seen before.)
+
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+<stripe-buy-button
+  buy-button-id="buy_btn_1OHVDiRdy8kn6S6aRBg2I9nx"
+  publishable-key="pk_live_51K59r2Rdy8kn6S6anuYmS7vkQjPhTrRe3nfs4Z4SBA7kjNoZXMumMRf99oKubccIZe2NNnjfPJP6UUExSxAWeiKc00sOO9TnSQ"
+>
+</stripe-buy-button>
+
+<!--
+Stripe form above won't load on plain http URL.
+I don't want to force HTTPS website-wide.
+I want to support disabled JavaScript.
+-->
+<a href="https://buy.stripe.com/aEU5l82C85RU3xCbIL" id="payment-link">Submit the payment and details.</a>
+<script type="text/javascript">
+if (window.location.protocol == "https:") {
+    document.getElementById('payment-link').setAttribute("hidden", "true");
+}
+</script>
+
+If we know each other, or your work in public interest is known to me, please [contact me](mailto:customer-support@autkin.net) to request an account for free.
+
+    {% endfilter %}
+  </div>
+</div>
+{% endblock %}
