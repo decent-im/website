@@ -1,0 +1,41 @@
+title: LLM chatbot
+date: 10-11-2023
+
+{% extends "post.html" %}
+{% block postcontent %}
+{% filter markdown %}
+
+So LLM (Large Language Models) are the hotness of the day. Still not a reliable tool, but amusing at least, and time-saving at its best.
+There is also an inspiring amount of stuff any curious individual can explore for free and without material obligations to corporations.
+
+[Llamafile](https://hacks.mozilla.org/2023/11/introducing-llamafile/) project is yet another breakthrough in lowering the complexity bar for trying out _local_ LLMs.
+[Download one file](https://huggingface.co/jartine/llava-v1.5-7B-GGUF/resolve/main/llava-v1.5-7b-q4-server.llamafile), and run it on your computer of maybe even the phone.
+
+I actually had to reach for lower level tool, [llama.cpp](https://github.com/ggerganov/llama.cpp) as llamafile didn't work properly on the machine I wanted to run it on.
+llama.cpp is still very approachable for a software tinkerer, and it is becoming easier to figure out how to download the precious "weights".
+
+Some models can analyse details on pictures you upload (bot doesn't support that).
+Some models can converse in all languages, not just English.
+Impressive!
+Imagine just a DVD or a few in your hands.
+Before, it was enough to install Linux or play an expensive game.
+Now it has, to some degree of fidelity, most of the information from the Internet.
+
+So in the old tradition of exposing software tricks in the form of a chatbot, I cobbled together an XMPP bot which lets XMPP users to talk to LLM models.
+
+Here is it: [llama@decent.im](xmpp:llama@decent.im)
+
+So try it out!
+
+I rotate the models and will mess with prompts and parameters, so check the bot status message for details.
+Message exchanges are monitored.
+
+Sometimes LLM says ridiculous things (false, made-up URLs, so many other things...), as is the common knowledge.
+But sometimes they are pretty good (model [`amethyst-13b-mistral.Q5_K_M`](https://huggingface.co/TheBloke/Amethyst-13B-Mistral-GGUF/resolve/main/amethyst-13b-mistral.Q5_K_M.gguf)):
+
+User: Which country owns Crimea?  
+Llama: Russia currently occupies and administers the Ukrainian peninsula of Crimea, but it remains internationally recognized as part of Ukraine. The annexation of Crimea by Russia in 2014 was widely condemned and considered illegal under international law.
+
+
+{% endfilter %}
+{% endblock postcontent %}
