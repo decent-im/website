@@ -1,0 +1,22 @@
+{
+	"website": {
+		"en": "https://decent.im"
+	},
+	"alternativeJids": [],
+	"busFactor": 1,
+	"organization": "commercial person",
+	"passwordReset": {},
+	"serverTesting": true,
+	"maximumHttpFileUploadTotalSize": 2000,
+	"maximumHttpFileUploadStorageTime": 0,
+	"maximumMessageArchiveManagementStorageTime": 0,
+	"professionalHosting": false,
+	"freeOfCharge": false,
+	"legalNotice": {
+		"en": "https://decent.im/privacy_policy/"
+	},
+	"serverLocations": [
+		"de"
+	],
+	"since": "2015-11-16"
+}
