@@ -15,31 +15,11 @@ As with the [XMPP service](/usage/), I use it daily and I like it very much.
 
 **[Take a look at my own selection of news sources to get a taste](https://news.decent.im/i/?a=normal&state=3).**
 
-<script async
-  src="https://js.stripe.com/v3/buy-button.js">
-</script>
-
-<stripe-buy-button
-  buy-button-id="buy_btn_1OHVDiRdy8kn6S6aRBg2I9nx"
-  publishable-key="pk_live_51K59r2Rdy8kn6S6anuYmS7vkQjPhTrRe3nfs4Z4SBA7kjNoZXMumMRf99oKubccIZe2NNnjfPJP6UUExSxAWeiKc00sOO9TnSQ"
->
-</stripe-buy-button>
-
-<!--
-Stripe form above won't load on plain http URL.
-I don't want to force HTTPS website-wide.
-I want to support disabled JavaScript.
--->
-<a href="https://buy.stripe.com/aEU5l82C85RU3xCbIL" id="payment-link">Submit the payment and details.</a>
-<script type="text/javascript">
-if (window.location.protocol == "https:") {
-    document.getElementById('payment-link').setAttribute("hidden", "true");
-}
-</script>
-
-So nice and affordable that you want to tip? [Donate to Ukraine instead](/donate-to-ukraine/).
+# **[Buy an account](https://news.decent.im/i/?c=customer&a=pay)**
 
 **[Manage subscription](https://billing.stripe.com/p/login/4gw8zd35Ga7dbFC7ss)**
+
+So nice and affordable that you want to tip? [Donate to Ukraine instead](/donate-to-ukraine/).
 
 If we know each other, or your work in public interest is known to me, please [contact me](mailto:customer-support@autkin.net) to request an account for free.
 
@@ -48,6 +28,8 @@ If we know each other, or your work in public interest is known to me, please [c
 <br>2023-11-28: offering published
 <br>2024-02-27: Enabled <a href="https://github.com/FreshRSS/Extensions/tree/master/xExtension-YouTube">Youtube</a> extension on customer request
 <br>2024-07-08: Enabled <a href="https://github.com/printfuck/xExtension-Readable">Readable</a> extension on customer request
+<br>2024-08-31: Rolled out completely automated registration
+<br>2024-08-31: Rolled out own development, <a href="https://github.com/decent-im/Extensions">TTS</a> extension
 
     {% endfilter %}
   </div>
