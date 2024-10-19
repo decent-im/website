@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="jumbotron">
+  <div class="container">
+    {% filter markdown %}
+
+# Newsreader-Service
+
+[English](/newsreader/)
+
+Hier wurde ein zuverlässiger Web-Feed-Reader-Service mit neuen Features entwickelt.
+
+* **Reine Informationen**: Verpassen Sie nie neue Informationen von den Menschen, die Ihr Vertrauen verdient haben, vermeiden Sie Ablenkungen
+* **Keine Cookies, keine Dialoge, keine Werbung, mehr Privatsphäre**
+* **Universal: Die meisten Websites haben Feeds**. Geben Sie ihm einfach die Seiten-URL, es erkennt den Feed
+* **Mobile-freundlich**: natives Web-Interface funktioniert gut und schnell mobil, auch es gibt viele [mobile Apps](https://github.com/FreshRSS/FreshRSS#apis--native-apps)
+* **Gönnen Sie Ihren Augen eine Pause und [hören](https://autkin.net/tmp/tts/demo.mp4) Sie Nachrichten**, mit dem integrierten modernen Sprachsynthesizer [Piper](https://github.com/rhasspy/piper/) auf hohe Einstellung.
+* **Mehr als RSS/Atom**: eingebautes Web-Scraping, auch gibt es praktische Dienste, die Feeds anbieten ([1](https://kill-the-newsletter.com/), [2](https://hnrss.github.io/))
+* **Freiheit vom Lock-in**: [FreshRSS](https://freshrss.org) ist leicht, sich zu bewirten, ich werde Sie gerne bei der Migration unterstützen
+
+Ich habe es für mich selbst eingerichtet, es erwies sich als ausgezeichnet, also teile ich es mit anderen.<br>
+Werfen Sie einen Blick auf [meine eigene Auswahl an Nachrichtenquellen](https://news.decent.im/i/?a=normal&state=3), um ein Gefühl zu bekommen.<br>
+Ich genieße
+professioneller Journalismus (
+[1](https://news.decent.im/i/?get=f_534&state=3),
+[2](https://news.decent.im/i/?a=normal&get=f_542&state=3)
+),
+Stellenangebote (
+[1](https://news.decent.im/i/?a=normal&get=f_316&state=3),
+[2](https://news.decent.im/i/?a=normal&get=f_156&state=3)
+),
+[Podcasts](https://news.decent.im/i/?a=normal&get=f_94&state=3),
+[Videoproduktionen](https://news.decent.im/i/?a=normal&get=f_482&state=3),
+soziale Medien (
+[1](https://news.decent.im/i/?a=normal&get=f_332&state=3),
+[2](https://news.decent.im/i/?get=f_321&state=3)
+),
+[Blogs](https://news.decent.im/i/?a=normal&get=f_133&state=3),
+[Comics](https://news.decent.im/i/?get=f_155&state=3)
+und mehr.
+
+
+**[Servicebedingungen](https://news.decent.im/i/?a=tos)**
+|
+**[Abonnement verwalten](https://billing.stripe.com/p/login/4gw8zd35Ga7dbFC7ss)**
+
+# **[Konto kaufen](https://news.decent.im/i/?c=customer&a=pay)**
+
+Sie erhalten 30 Tage Test und zahlen £20 (≈ €24 ≈ $26) pro Jahr.<br>
+Möchten Sie Trinkgeld geben? [Spenden Sie an die Ukraine](/donate-to-ukraine/).
+
+Sie arbeiten im öffentlichen Interesse? [Kontaktiere mich](mailto:customer-support@autkin.net) für ein kostenloses Konto.
+
+
+<br>Geschichte
+<br>
+<br>2023-11-28: Angebot veröffentlicht
+<br>2024-02-27: Aktivierte <a href="https://github.com/FreshRSS/Extensions/tree/master/xExtension-YouTube">Youtube</a>-Erweiterung auf Kundenwunsch
+<br>2024-07-08: Aktivierte <a href="https://github.com/printfuck/xExtension-Readable">Readable</a>-Erweiterung auf Kundenwunsch
+<br>2024-08-31: Komplett automatisierte Registrierung
+<br>2024-08-31: Eigene Entwicklung, <a href="https://github.com/decent-im/Extensions">TTS</a>-Erweiterung
+<br>2024-09-06: Der Preis wird von 10 GBP/yr auf 20 GBP/yr erhöht, um die Entwicklung von TTS wiederzuerbieten und mehr davon möglich zu machen. Bestehende Kunden sind nicht betroffen.
+
+    {% endfilter %}
+  </div>
+</div>
+{% endblock %}
